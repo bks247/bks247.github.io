@@ -1093,7 +1093,11 @@ function openFolder(id){
       // Remove remaining column-like numbers at end (country prefixes)
       name = name.replace(/\s+\d{1,4}\s*$/,"").trim();
 
-      return name;
+      // Clean extra quotes, brackets and spaces
+name = name.replace(/["']/g, '');
+name = name.replace(/\s+/g, ' ').trim();
+
+return name;
     }
 
     for (const line of lines){
