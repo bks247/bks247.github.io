@@ -813,7 +813,11 @@ async function refreshFromFirebase() {
   }
 
   document.getElementById('searchInput').addEventListener('input', renderList);
-  document.getElementById('bulkDeleteBtn').addEventListener('click', deleteSelectedFolders);
+
+const bulkDeleteBtn = document.getElementById('bulkDeleteBtn');
+if (bulkDeleteBtn) {
+  bulkDeleteBtn.addEventListener('click', deleteSelectedFolders);
+}
 
   document.getElementById('showCreateBtn').addEventListener('click', () => {
     const form = document.getElementById('createForm');
